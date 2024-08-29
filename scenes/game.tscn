@@ -15,4 +15,8 @@ texture = ExtResource("1_pwiyg")
 position = Vector2(634, 601)
 
 [node name="Gem" parent="." instance=ExtResource("3_pv5x1")]
-position = Vector2(618, 73)
+position = Vector2(822, 86)
+
+[node name="Gem2" parent="." instance=ExtResource("3_pv5x1")]
+position = Vector2(247, 37)
+speed = 150.0
