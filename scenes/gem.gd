@@ -9,3 +9,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position.y += 100.0 * delta
+	
+	if position.y > get_viewport_rect().size.y:
+		set_process(false)
+		queue_free()
