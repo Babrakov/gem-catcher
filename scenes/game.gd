@@ -9,7 +9,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
 
 
-func _on_gem_off_screen() -> void:
-	print("gem off the screen")
+func _on_timer_timeout() -> void:
+	print("_on_timer_timeout")
