@@ -2,6 +2,8 @@ extends Node2D
 
 @export var gem_scene: PackedScene
 @onready var label: Label = $Label
+@onready var timer: Timer = $Timer
+@onready var game_over_label: Label = $GameOverLabel
 
 var _score: int = 0
 
@@ -23,8 +25,15 @@ func spawn_gem() -> void:
 	new_scene.position = Vector2(xpos,-50)	
 	add_child(new_scene)
 
+func stop_all() -> void:
+	timer.stop()
+	for child in get_children():
+		child.set_process(false)
+	game_over_label.text = "Game Over"
+	game_over_label.visible = true
+
 func game_over() -> void:
-	print("Game Over")
+	stop_all()
 
 func _on_timer_timeout() -> void:
 	spawn_gem()
